@@ -1,0 +1,26 @@
+<div class="mt-2">
+
+</div>
+
+
+<div class="md-form" style="width:150px; margin:auto;">
+    <input mdbInput type="text" id="form1" class="form-control" [(ngModel)]="selectedDate">
+    <label for="form1" class="">Date</label>
+    <button (click)="applyDate()" type="button" mdbBtn mdbWavesEffect>Apply</button>
+</div>
+
+<div *ngIf="loaded" >
+    <div class="row">
+        <div *ngFor="let number of numbers" class="col-2 m-0 p-1">
+            <button type="button" mdbBtn mdbWavesEffect style="width:100%; height: 100%;"
+                [ngClass]="getClassFor(number)" (click)="timeSelected(number)">
+                {{number}}:00 => {{number+1}}:00
+            </button>
+        </div>
+    </div>
+
+
+    <div class="md-form mt-2" style="width:150px; margin:auto;">
+        <button type="button" mdbBtn mdbWavesEffect (click)="reserve()">Reserve</button>
+    </div>
+</div>
